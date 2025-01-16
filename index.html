@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .container {
+      display: flex;
+      height: 600px;
+      width: 600px;
+    }
+    .div1 {
+      background-color: chocolate;
+      height: 100px;
+      width: 100px;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    .div2 {
+      background-color: chocolate;
+      height: 100px;
+      width: 100px;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    .div3 {
+      background-color: chocolate;
+      height: 100px;
+      width: 100px;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    .div4 {
+      background-color: blueviolet;
+      height: 100px;
+      width: 100px;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    .div5 {
+      background-color: blueviolet;
+      height: 100px;
+      width: 100px;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    .div6 {
+      background-color: blueviolet;
+      height: 100px;
+      width: 100px;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+  </style>
+  <body>
+    <button>click me</button>
+    <div class="container">
+      <div class="div1"></div>
+      <div class="div2"></div>
+      <div class="div3"></div>
+      <div class="div4"></div>
+      <div class="div5"></div>
+      <div class="div6"></div>
+    </div>
+
+    <script src="./jquery-3.7.1.js"></script>
+    <script>
+      $("button").click(function () {
+        $(".div1").fadeTo(1000, 0.2);
+      });
+      $("button").click(function () {
+        $(".div2").fadeTo(1000, 0.5);
+      });
+      $("button").click(function () {
+        $(".div3").fadeTo(1000, 0.9);
+      });
+      $("button").click(function () {
+        $(".div4").fadeTo(1000, 0.2);
+      });
+      $("button").click(function () {
+        $(".div5").fadeTo(1000, 0.5);
+      });
+      $("button").click(function () {
+        $(".div6").fadeTo(1000, 0.9);
+      });
+    </script>
+  </body>
+</html>
