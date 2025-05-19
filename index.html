@@ -3,59 +3,143 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Animated Project</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+        height: 100vh;
+        overflow: hidden;
+        background: linear-gradient(-45deg, #c9d6ff, #e2e2e2, #d4fc79, #96e6a1);
+        background-size: 400% 400%;
+        animation: gradientBG 12s ease infinite;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Floating circles */
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.2;
+        background: white;
+        animation: float 20s linear infinite;
+      }
+
+      .circle:nth-child(1) {
+        width: 80px;
+        height: 80px;
+        top: 20%;
+        left: 10%;
+        animation-duration: 18s;
+      }
+
+      .circle:nth-child(2) {
+        width: 100px;
+        height: 100px;
+        top: 60%;
+        left: 80%;
+        animation-duration: 25s;
+      }
+
+      .circle:nth-child(3) {
+        width: 60px;
+        height: 60px;
+        top: 80%;
+        left: 30%;
+        animation-duration: 20s;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-30px) rotate(180deg);
+        }
+        100% {
+          transform: translateY(0px) rotate(360deg);
+        }
+      }
+
+      button {
+        padding: 12px 25px;
+        font-size: 18px;
+        background-color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-bottom: 30px;
+        transition: 0.3s ease;
+        z-index: 1;
+      }
+
+      button:hover {
+        background-color: #f0f0f0;
+        transform: scale(1.05);
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        width: 640px;
+        z-index: 1;
+      }
+
+      .container div {
+        height: 100px;
+        width: 100px;
+        border-radius: 10px;
+        transition: transform 0.3s ease, opacity 0.5s ease;
+      }
+
+      .container div:hover {
+        transform: scale(1.1);
+      }
+
+      .div1,
+      .div2,
+      .div3 {
+        background-color: #4b2c20; /* Dark Chocolate */
+      }
+
+      .div4,
+      .div5,
+      .div6 {
+        background-color: #5a189a; /* Deep Violet */
+      }
+    </style>
   </head>
-  <style>
-    .container {
-      display: flex;
-      height: 600px;
-      width: 600px;
-    }
-    .div1 {
-      background-color: chocolate;
-      height: 100px;
-      width: 100px;
-      margin-top: 20px;
-      margin-left: 20px;
-    }
-    .div2 {
-      background-color: chocolate;
-      height: 100px;
-      width: 100px;
-      margin-top: 20px;
-      margin-left: 20px;
-    }
-    .div3 {
-      background-color: chocolate;
-      height: 100px;
-      width: 100px;
-      margin-top: 20px;
-      margin-left: 20px;
-    }
-    .div4 {
-      background-color: blueviolet;
-      height: 100px;
-      width: 100px;
-      margin-top: 20px;
-      margin-left: 20px;
-    }
-    .div5 {
-      background-color: blueviolet;
-      height: 100px;
-      width: 100px;
-      margin-top: 20px;
-      margin-left: 20px;
-    }
-    .div6 {
-      background-color: blueviolet;
-      height: 100px;
-      width: 100px;
-      margin-top: 20px;
-      margin-left: 20px;
-    }
-  </style>
   <body>
-    <button>click me</button>
+    <!-- Floating background circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <button>Click Me</button>
+
     <div class="container">
       <div class="div1"></div>
       <div class="div2"></div>
@@ -69,20 +153,10 @@
     <script>
       $("button").click(function () {
         $(".div1").fadeTo(1000, 0.2);
-      });
-      $("button").click(function () {
         $(".div2").fadeTo(1000, 0.5);
-      });
-      $("button").click(function () {
         $(".div3").fadeTo(1000, 0.9);
-      });
-      $("button").click(function () {
         $(".div4").fadeTo(1000, 0.2);
-      });
-      $("button").click(function () {
         $(".div5").fadeTo(1000, 0.5);
-      });
-      $("button").click(function () {
         $(".div6").fadeTo(1000, 0.9);
       });
     </script>
